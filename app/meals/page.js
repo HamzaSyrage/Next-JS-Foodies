@@ -21,9 +21,7 @@ export default function MealPage() {
         </p>
       </header>
       <main className={classes.cta}>
-        <Suspense
-          fallback={<p className={classes.loading}>loading meals...</p>}
-        >
+        <Suspense fallback={<div class={classes.loader}></div>}>
           <Meals />
         </Suspense>
       </main>

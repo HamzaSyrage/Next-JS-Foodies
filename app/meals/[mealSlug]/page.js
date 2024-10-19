@@ -3,9 +3,9 @@ import classes from "./page.module.css";
 import { getMeal } from "@/lib/meals";
 import { notFound } from "next/navigation";
 export default function MealSlugPage({ params }) {
-  if (!getMeal(params.mealSlug)) {
-    notFound();
-  }
+  // if (!getMeal(params.mealSlug)) {
+  //   notFound();
+  // }
 
   const { title, image, summary, creator, instructions, creator_email } =
     getMeal(params.mealSlug);
