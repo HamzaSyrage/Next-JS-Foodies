@@ -1,4 +1,3 @@
 {
-  "framework": "nextjs",
   "routes": [{ "meals": "/[^.]+", "dest": "/", "status": 200 }]
 }
