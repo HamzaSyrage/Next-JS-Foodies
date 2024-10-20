@@ -2,14 +2,24 @@ import Image from "next/image";
 import classes from "./page.module.css";
 import { getMeal } from "@/lib/meals";
 import { notFound } from "next/navigation";
+
+export async function generateMetadata({ params }) {
+  const { title, summary, creator } = getMeal(params.mealSlug);
+  return {
+    title,
+    author: creator,
+    description: summary,
+  };
+}
+
 export default function MealSlugPage({ params }) {
   if (!getMeal(params.mealSlug)) {
     notFound();
   }
-
   const { title, image, summary, creator, instructions, creator_email } =
     getMeal(params.mealSlug);
   const fixedInstructions = instructions.trim().split(`\n`).join(" <br/>");
+
   return (
     <>
       <header className={classes.header}>
