@@ -1,3 +1,0 @@
-{
-  "routes": [{ "src": "/[^.]+", "dest": "/meals/:mealSlug", "status": 200 }]
-}
